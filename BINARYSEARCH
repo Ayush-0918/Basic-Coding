@@ -1,0 +1,23 @@
+/// WAP BINARY SEARCH 
+#include <stdio.h>
+#include <math.h>
+
+/// @brief 
+/// @return 
+int main() {
+    int rem, count = 0;
+    long int b, n = 0;
+
+    printf("\nEnter binary number: ");
+    scanf("%ld", &b);
+
+    while (b > 0) {
+        rem = b % 10; // Get the last digit
+        n = n + rem * (long int)pow(2, count); // Convert and accumulate
+        count = count + 1; // Move to the next bit
+        b = b / 10; // Remove the last digit
+    }
+
+    printf("\nInteger value is %ld\n", n);
+    return 0;
+}
